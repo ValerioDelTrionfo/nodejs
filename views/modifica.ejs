@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifica</title>
+</head>
+<body>
+    <a href="/">Home page</a>
+    <form method="POST" action="/modifica">
+        <input type="hidden" name="id" value="<%= scarpa.id %>">
+        <input type="text" name="modello" value="<%= scarpa.modello %>">
+        <input type="text" name="marca" value="<%= scarpa.marca %>">
+        <input type="submit" value="Modifica">
+    </form>
+</body>
+</html>

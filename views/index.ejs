@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina EJS</title>
+</head>
+<body>
+    <form method="POST" action="/creascarpa">
+        <input type="text" name="modello">
+        <input type="text" name="marca">
+        <input type="submit" value="Crea Scarpa">
+    </form> 
+    <% scarpe.forEach(scarpa => { %>
+        <p> <%= scarpa.modello %>  </p>
+        <p> <%= scarpa.marca %>  </p>
+        <a href="/modificascarpa/<%= scarpa.id %>">Modifica</a>
+        <form method="POST" action="/elimina">
+            <input type="hidden" name="id" value="<%= scarpa.id %>">
+            <input type="submit" value="Elimina">
+        </form>
+    <% }) %>
+</body>
+</html>
